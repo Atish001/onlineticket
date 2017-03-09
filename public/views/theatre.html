@@ -1,0 +1,68 @@
+<div class="container">
+
+
+        <ul class="nav nav-tabs">
+             <li><a data-toggle="tab" href="/movies"><span class="glyphicon glyphicon-film"></span> Movies</a></li>
+             <li><a data-toggle="tab" href="/city"><span class="glyphicon glyphicon-map-marker"></span> City</a></li>
+             <li><a data-toggle="tab" href="/theatre"><span class="glyphicon glyphicon-text-width"></span> Theatre</a></li>
+             <li><a data-toggle="tab" href="/showtime"><span class="glyphicon glyphicon-facetime-video"></span> Show Timing</a></li>
+             <li><a data-toggle="tab" href="/assign"><span class="glyphicon glyphicon-floppy-disk"></span> Assign</a></li>
+        </ul>
+</div>
+
+<div class="container jumbotron text-center">
+    <h1>Create Theatre Here</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Theatre Name</th>
+                        <th>No of Seats</th>
+                        <th>Ticket Price</th>
+                        <th>City</th>
+                        <th>Operations</th>
+
+
+                        </th>
+                        <th>
+
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                        <td><input placeholder="Theatre Name"  ng-model="theatre.theatreName" /></td>
+                        <td><input type="number" placeholder="Number of Seats"  ng-model="theatre.theatreSeating" /></td>
+                        <td><input type="number" placeholder="Ticket Price"  ng-model="theatre.theatrePrice" /></td>
+                        <td><select ng-model="theatre.city">
+                                                     <option ng-repeat="city in cityList" ng-value ="city.cityName">
+                                                         {{city.cityName}}
+                                                     </option>
+
+                                                    </select></td>
+                        <td><button ng-click="addTheatre(theatre)" class="btn btn-success">Add </button>
+                        </td>
+
+                        <td><button ng-click="updateTheatre(theatre)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+                    <tr ng-repeat="theatre in theatreList">
+                      <td>{{theatre.theatreName}}</td>
+                      <td>{{theatre.theatreSeats}}</td>
+                      <td>{{theatre.ticketPrice}}</td>
+                      <td>{{theatre.cityName}}</td>
+
+                      <td><button ng-click="removeTheatre(theatre)" class="btn btn-danger waves-effect">Remove</button></td>
+                      <td><button ng-click="editTheatre(theatre)" class="btn btn-primary waves-effect">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>

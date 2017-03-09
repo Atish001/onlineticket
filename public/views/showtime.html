@@ -1,0 +1,58 @@
+<div class="container">
+
+
+        <ul class="nav nav-tabs">
+             <li><a data-toggle="tab" href="/movies"><span class="glyphicon glyphicon-film"></span> Movies</a></li>
+             <li><a data-toggle="tab" href="/city"><span class="glyphicon glyphicon-map-marker"></span> City</a></li>
+             <li><a data-toggle="tab" href="/theatre"><span class="glyphicon glyphicon-text-width"></span> Theatre</a></li>
+             <li><a data-toggle="tab" href="/showtime"><span class="glyphicon glyphicon-facetime-video"></span> Show Timing</a></li>
+             <li><a data-toggle="tab" href="/assign"><span class="glyphicon glyphicon-floppy-disk"></span> Assign</a></li>
+        </ul>
+</div>
+
+<div class="container jumbotron text-center">
+    <h1>Assign Show Timings to Theatre</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Show Time</th>
+                        <th>Select Theatre</th>
+                        <th>
+                          Operations
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="string" placeholder="Timings"  ng-model="showtime.showTimings" /></td>
+
+                        <td><select ng-model="showtime.theatreName">
+                               <option ng-repeat="theatre in theatreList" ng-value ="theatre.theatreName">
+                                   {{theatre.theatreName}}
+                               </option>
+                            </select>
+                        </td>
+                        <td><button ng-click="addTimings(showtime)" class="btn btn-success">Add </button>
+                        </td>
+
+                        <td><button ng-click="updateShowtime(showtime)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+                    <tr ng-repeat="showtime in showtimeList">
+                      <td>{{showtime.showTimings}}</td>
+                      <td>{{showtime.theatreName}}</td>
+                      <td><button ng-click="removeShowtime(showtime)" class="btn btn-danger waves-effect">Remove</button></td>
+                      <td><button ng-click="editShowtime(showtime)" class="btn btn-primary waves-effect">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>

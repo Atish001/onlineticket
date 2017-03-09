@@ -1,0 +1,51 @@
+<div class="container">
+
+
+        <ul class="nav nav-tabs">
+             <li><a data-toggle="tab" href="/movies"><span class="glyphicon glyphicon-film"></span> Movies</a></li>
+             <li><a data-toggle="tab" href="/city"><span class="glyphicon glyphicon-map-marker"></span> City</a></li>
+             <li><a data-toggle="tab" href="/theatre"><span class="glyphicon glyphicon-text-width"></span> Theatre</a></li>
+             <li><a data-toggle="tab" href="/showtime"><span class="glyphicon glyphicon-facetime-video"></span> Show Timing</a></li>
+             <li><a data-toggle="tab" href="/assign"><span class="glyphicon glyphicon-floppy-disk"></span> Assign</a></li>
+        </ul>
+</div>
+
+<div class="container jumbotron text-center">
+    <h1>City</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>City List</th>
+                        <th>Functions</th>
+                        <th>
+
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                        <td><input ng-model="city.cityName" /></td>
+
+                        <td><button ng-click="addCity(city)" class="btn btn-success">Add </button></td>
+
+                        <td><button ng-click="updateCity(city)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+                    <tr ng-repeat=" city in cityList">
+                        <td>{{city.cityName}}</td>
+
+                        <td><button ng-click="removeCity(city)" class="btn btn-danger">Remove</button></td>
+                        <td><button ng-click="editCity(city)" class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Movie Booking</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- custom styles -->
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/BookingCtrl.js"></script>
+    <script src="js/services/NerdService.js"></script>
+    <script src="js/controllers/MovieCtrl.js"></script>
+    <script src="js/controllers/AssignCtrl.js"></script>
+    <script src="js/controllers/CityCtrl.js"></script>
+    <script src="js/controllers/ShowTimeCtrl.js"></script>
+    <script src="js/controllers/TheatreCtrl.js"></script>
+    <script src="js/controllers/BookCtrl.js"></script>
+    <script src="js/controllers/AdminCtrl.js"></script>
+    <script src="js/services/GeekService.js"></script>
+    <script src="js/appRoutes.js"></script>
+
+</head>
+
+<body ng-app="sampleApp" style="background-color: #eaeaea;">
+ <br><br>
+<h3 style="text-align:left;color: red"><img src="http://vignette3.wikia.nocookie.net/kickbuttowski/images/e/e5/Kick.png/revision/latest?cb=20110329231056" style="height:70px;width: 50px;"> MovieKing.com <img src="http://vignette3.wikia.nocookie.net/kickbuttowski/images/e/e5/Kick.png/revision/latest?cb=20110329231056" style="height:70px;width: 50px;"></h3>
+
+      <div class="container">
+
+
+           <ul class="nav nav-tabs navbar-inverse navbar-fixed-top">
+                <li><a data-toggle="tab" href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                   <li><a data-toggle="tab" href="/admin"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+                   <li><a data-toggle="tab" href="/booking"><span class="glyphicon glyphicon-floppy-disk"></span> Cancellation</a></li>
+                   
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">Log-in<strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+               <li><a data-toggle="tab" href="/login"><span class="glyphicon glyphicon-old-man"> Admin</span></a></li>
+                   <li><a data-toggle="tab" href="/sign"><span class="glyphicon glyphicon-group"> Sign-in</span></a></li>
+                </ul>
+                </li>
+              </ul>
+    </div>
+  <br>
+  <div ng-view></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+     <div class="jumbotron">
+    <footer><hr><hr>
+    <p><h4>&copy; Movieking.com</h4></p>
+        <p><a href="/"><h4>Home</h4></a></p>
+          <p><a href="#"><h4>Terms&conditions</h4></a></p>
+          <p><a href="#"><h4>AboutUs</h4></a></p>
+          <p><a href="/contact"><h4>ContactUs</h4></a></p>
+    </footer></div>
+
+</body>
+
+</html>
